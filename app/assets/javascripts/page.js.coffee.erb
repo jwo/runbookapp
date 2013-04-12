@@ -1,6 +1,25 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
-
 jQuery ->
-  filepicker.setKey('<%= Filepicker.api_key %>')
+  filepicker.setKey("<%= Filepicker.api_key %>")
+  filepicker.makeDropPane($('#fileDropPane')[0], {
+    multiple: false
+    extension: '.png, .jpeg, .jpg'
+    dragEnter: ->
+      $("#fileDropPane").html("Drop to upload").css({
+        'backgroundColor': "#E0E0E0",
+        'border': "1px solid #000"
+      })
+    dragLeave: ->
+      $("#fileDropPane").html("Drop files here").css({
+        'backgroundColor': "#F6F6F6",
+        'border': "1px dashed #666"
+      })
+    onSuccess: (fpfiles)->
+      $("#fileDropPane").text("Done, see result below")
+      $("#page_remote_image_url").val(fpfiles[0]["url"])
+      $("#localDropResult").text("OK, you're ready to go!")
+      $("<img src='#{fpfiles[0]['url']}'/>").appendTo("#localDropResult")
+    onError: (type, message) ->
+      $("#localDropResult").text('('+type+') '+ message)
+    onProgress: (percentage)->
+      $("#fileDropPane").text("Uploading ("+percentage+"%)")
+  })

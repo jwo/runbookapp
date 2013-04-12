@@ -1,7 +1,8 @@
 # encoding: utf-8
-
+require 'carrierwave/processing/mime_types'
 class ImageUploader < CarrierWave::Uploader::Base
 
+  include CarrierWave::MimeTypes
   include CarrierWave::MiniMagick
   include Sprockets::Rails::Helper
 
@@ -13,18 +14,13 @@ class ImageUploader < CarrierWave::Uploader::Base
     asset_path("fallback/" + ["blankpage", version_name, "default.png"].compact.join('_'))
   end
 
+  process :set_content_type
   version :thumb do
     process :resize_to_fill=> [50, 50]
   end
 
   version :page do
     process :resize_to_fill=> [500, 500]
-  end
-
-  # Add a white list of extensions which are allowed to be uploaded.
-  # For images you might use something like this:
-  def extension_white_list
-    %w(jpg jpeg gif png)
   end
 
   # Override the filename of the uploaded files:

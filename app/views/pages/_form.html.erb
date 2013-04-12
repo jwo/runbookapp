@@ -1,13 +1,22 @@
 <%=content_for(:javascript) do -%>
   <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
-
 <% end -%>
 <%= simple_form_for [@application, @page] do |f| %>
   <%= f.input :title, input_html: {class: :span8}%>
   <%= f.input :description, as: :text%>
   <%= f.input :sidebar, as: :text %>
   <%= f.input :footer, as: :text%>
-  <%= f.input :remote_image_url %>
+  <%= f.input :image if @page.errors[:image].any? %>
+  <%= f.input :remote_image_url, as: :hidden%>
+  <div id="fileDropPane">
+    Drop files here
+  </div>
+  <div class="row">
+    <div class="span2"><strong>Result:</strong></div>
+    <div class="span10">
+      <pre id="localDropResult"></pre>
+    </div>
+  </div>
   <%= f.submit class: "btn btn-primary btn-large" %>
 
 <% end %>
