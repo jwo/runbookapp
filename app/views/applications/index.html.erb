@@ -1,0 +1,27 @@
+<div class="well">
+  <div class="pull-right">
+    <%=link_to "Create Application", [:new, :application], class: "btn btn-primary" %>
+  </div>
+  <h1>Your Applications</h1>
+</div>
+
+
+<% if @applications.any? -%>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>th</th>
+    </tr>
+    <% @applications.each do |app| %>
+      <tr>
+        <td><%=link_to app.name, app %></td>
+        <td>
+          <%=link_to 'edit', [:edit, app], class: 'btn' %>
+          <%=link_to 'destroy', app, class: 'btn', "data-confirm"=>'Are you positive?', method: :destroy %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <div>No Applications</div>
+<% end %>

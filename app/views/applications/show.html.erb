@@ -1,0 +1,21 @@
+<div class="well">
+  <div class="pull-right">
+    <%=link_to "Edit Application", [:edit, @application], class: "btn" %>
+  </div>
+  <h1>Application: <%= @application.name %></h1>
+</div>
+
+
+<%= link_to "Create Page", [:new, @application, :page], class: "btn btn-primary pull-right" %>
+<h2>Pages <%= @application.pages.count %></h2>
+
+<ul class="thumbnails">
+  <% @application.pages.each do |page| %>
+    <li class="span4">
+      <%= link_to [@application, page], class: :thumbnail do %>
+        <%= image_tag page.image.url(:page) %>
+      <% end %>
+    </li>
+
+  <% end %>
+</ul>

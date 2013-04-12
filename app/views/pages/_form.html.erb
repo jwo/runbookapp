@@ -1,0 +1,13 @@
+<%=content_for(:javascript) do -%>
+  <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
+
+<% end -%>
+<%= simple_form_for [@application, @page] do |f| %>
+  <%= f.input :title, input_html: {class: :span8}%>
+  <%= f.input :description, as: :text%>
+  <%= f.input :sidebar, as: :text %>
+  <%= f.input :footer, as: :text%>
+  <%= f.input :remote_image_url %>
+  <%= f.submit class: "btn btn-primary btn-large" %>
+
+<% end %>
