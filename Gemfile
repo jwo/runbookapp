@@ -14,6 +14,7 @@ gem 'fog'
 gem 'carrierwave', github: "jnicklas/carrierwave"
 gem 'mini_magick'
 gem 'slim-rails'
+gem 'rack-cache'
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
