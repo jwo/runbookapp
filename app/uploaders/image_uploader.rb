@@ -16,11 +16,11 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   process :set_content_type
   version :thumb do
-    process :resize_to_fill=> [50, 50]
+    process :resize_to_fill=> [150, 150]
   end
 
   version :page do
-    process :resize_to_fill=> [500, 500]
+    process :resize_to_fill=> [612, 612]
   end
 
   # Override the filename of the uploaded files:

@@ -1,14 +1,16 @@
 <div class="row">
-  <h1><%= @page.title%></h1>
-  <div class="well"><p><%= @page.description %></p></div>
+  <div class="span12">
+    <h1><%= @page.title%></h1>
+    <div class="well"><p><%= @page.description %></p></div>
+  </div>
 </div>
 
-<div class="row">
+<div class="page">
   <div class="main">
     <%= image_tag @page.image.url(:page) %>
-    <p class="muted"><%= @page.footer%></p>
+    <div class="footer"><%= @page.footer %></p></div>
   </div>
-  <aside class="span4">
+  <aside> 
     <%= @page.sidebar %>
   </aside>
 </div>

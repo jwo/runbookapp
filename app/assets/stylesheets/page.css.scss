@@ -1,6 +1,4 @@
-// Place all the styles related to the page controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap";
 
 #fileDropPane {
     text-align: center;
@@ -9,4 +7,19 @@
     border: 1px dashed #666;
     border-radius: 6px;
     margin-bottom: 20px;
+}
+
+.page {
+  @extend .row;
+  .main {
+    @include makeColumn(8);
+
+    .footer {
+      @extend .muted;
+      margin-top: 30px;
+    }
+  }
+  aside {
+    @include makeColumn(4);
+  }
 }
