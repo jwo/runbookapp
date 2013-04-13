@@ -54,6 +54,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.33)
     arel (4.0.0.beta2)
+    asset_sync (0.5.4)
+      activemodel
+      fog
     atomic (1.1.7)
     bcrypt-ruby (3.0.1)
     better_errors (0.8.0)
@@ -207,6 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  asset_sync
   better_errors
   binding_of_caller
   bootstrap-sass

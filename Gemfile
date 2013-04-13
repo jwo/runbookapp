@@ -11,6 +11,7 @@ gem 'devise', github: "plataformatec/devise", branch: 'rails4'
 gem "cancan"
 gem "kaminari"
 gem 'fog'
+gem 'asset_sync'
 gem 'carrierwave', github: "jnicklas/carrierwave"
 gem 'mini_magick'
 gem 'slim-rails'
