@@ -2,7 +2,6 @@ jQuery ->
   filepicker.setKey("<%= Filepicker.api_key %>")
   filepicker.makeDropPane($('#fileDropPane')[0], {
     multiple: false
-    extension: '.png, .jpeg, .jpg'
     dragEnter: ->
       $("#fileDropPane").html("Drop to upload").css({
         'backgroundColor': "#E0E0E0",
