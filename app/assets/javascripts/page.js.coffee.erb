@@ -1,7 +1,8 @@
 jQuery ->
   $('.best_in_place').best_in_place()
 
-  if($("body").data("controller") == "pages" && $("data").data("action") == "new")
+jQuery ->
+  if($("#fileDropPane")[0])
     filepicker.setKey("<%= Filepicker.api_key %>")
     filepicker.makeDropPane($('#fileDropPane')[0], {
       multiple: false
