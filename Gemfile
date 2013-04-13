@@ -16,6 +16,7 @@ gem 'carrierwave', github: "jnicklas/carrierwave"
 gem 'mini_magick'
 gem 'slim-rails'
 gem 'rack-cache'
+gem 'best_in_place', github: "bernat/best_in_place"
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'

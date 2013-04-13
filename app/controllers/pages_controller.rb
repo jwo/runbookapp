@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :find_application
-  respond_to :html
+  respond_to :html, :json
 
   def new
     @page = @application.pages.build
@@ -19,6 +19,12 @@ class PagesController < ApplicationController
 
   def show
     @page = @application.pages.find(params[:id])
+  end
+
+  def update
+    @page = @application.pages.find(params[:id])
+    @page.update_attributes(page_params)
+    respond_with @page
   end
 
   private

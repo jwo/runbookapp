@@ -1,5 +1,7 @@
 jQuery ->
-  if($("body").data("controller") == "pages")
+  $('.best_in_place').best_in_place()
+
+  if($("body").data("controller") == "pages" && $("data").data("action") == "new")
     filepicker.setKey("<%= Filepicker.api_key %>")
     filepicker.makeDropPane($('#fileDropPane')[0], {
       multiple: false
@@ -23,3 +25,10 @@ jQuery ->
       onProgress: (percentage)->
         $("#fileDropPane").text("Uploading ("+percentage+"%)")
     })
+
+jQuery(document).on('best_in_place:error', (event, request, error)->
+  jQuery.each(jQuery.parseJSON(request.responseText)["errors"], (index, value) ->
+    container = jQuery("<span class='alert alert-error'>#{index}: #{value}</span>").html(value)
+    container.purr()
+  )
+)

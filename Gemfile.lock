@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/bernat/best_in_place.git
+  revision: 5c61cbf6eb63f1126f0a59257d7e704034a26c57
+  specs:
+    best_in_place (2.1.0)
+      jquery-rails
+      rails (>= 3.1)
+
+GIT
   remote: git://github.com/jnicklas/carrierwave.git
   revision: 92155e42cdb6ee99cf764c3ca3650d4f66e9f82f
   specs:
@@ -211,6 +219,7 @@ PLATFORMS
 
 DEPENDENCIES
   asset_sync
+  best_in_place!
   better_errors
   binding_of_caller
   bootstrap-sass
