@@ -14,6 +14,11 @@
   .main {
     @include makeColumn(8);
 
+    img  {
+      border: 1px solid #999999;
+      @extend .img-rounded;
+    }
+
     .footer {
       @extend .muted;
       margin-top: 30px;

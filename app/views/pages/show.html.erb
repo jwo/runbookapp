@@ -1,6 +1,11 @@
 <div class="row">
   <div class="span12">
     <h1><%= best_in_place @page, :title, path: [@page.application, @page]%></h1>
+    <ul class="breadcrumb">
+      <li><%= link_to "Home", root_path%><span class="divider">/</span></li>
+      <li><%= link_to "Application", @page.application%><span class="divider">/</span></li>
+      <li class="active">Page</li>
+    </ul>
     <div class="well">
       <p>
       <%= best_in_place @page, :description, 
@@ -25,6 +30,11 @@
     </div>
   </div>
   <aside> 
+    <h6>Placement</h6>
+    <ul>
+      <li>Folder: <%= best_in_place @page, :folder, path: [@page.application, @page]%></li>
+      <li>Order: <%= best_in_place @page, :order, path: [@page.application, @page]%></li>
+    </ul>
     <%= best_in_place @page, :sidebar,
       path: [@page.application, @page],
       type: :textarea%>

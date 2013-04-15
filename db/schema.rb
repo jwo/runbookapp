@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130412152453) do
+ActiveRecord::Schema.define(version: 20130415192615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(version: 20130412152453) do
     t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "folder",         default: ""
+    t.string   "order",          default: ""
   end
 
   add_index "pages", ["application_id"], name: "index_pages_on_application_id"

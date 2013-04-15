@@ -1,0 +1,5 @@
+<% if @page.errors.any? %>
+  alert('<%= j @page.errors.full_messages.join(',') %>');
+<% else %>
+  $("#application").html("<%= j render @page.application %>");
+<% end %>

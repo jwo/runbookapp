@@ -27,12 +27,25 @@ class PagesController < ApplicationController
     respond_with @page
   end
 
+  def destroy
+    @page = @application.pages.find(params[:id])
+    @page.destroy
+    render :status => :ok
+  end
+
   private
   def find_application
     @application = current_user.applications.find(params[:application_id])
   end
 
   def page_params
-    params.require(:page).permit(:image, :remote_image_url, :title, :description, :sidebar, :footer)
+    params.require(:page).permit(:image,
+                                 :remote_image_url,
+                                 :title,
+                                 :description,
+                                 :sidebar,
+                                 :footer,
+                                 :folder,
+                                 :order)
   end
 end

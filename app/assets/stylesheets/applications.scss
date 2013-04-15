@@ -1,0 +1,8 @@
+@import "bootstrap";
+img.media-thumb {
+  @extend .img-rounded;
+  border: 1px solid #999999;
+}
+h3.folder {
+  border-bottom: 1px solid #999999;
+}

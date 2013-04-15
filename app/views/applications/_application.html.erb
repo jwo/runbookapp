@@ -1,0 +1,22 @@
+<% application.pages.group_by(&:folder).each do |folder, pages| %>
+  <h3 class="folder"><%= folder %></h3>
+  <ul class="media-list">
+    <%pages.each do |page|%>
+      <li class="media">
+      <%= link_to [application, page], class: "pull-left" do %>
+        <%= image_tag page.image.url(:thumb), class: "media-thumb"%>
+      <% end %>
+      <div class="media-body">
+        <%= link_to "Delete", [application, page], 
+          class: "btn btn-danger btn-small pull-right",
+          method: :delete,
+          remote: true, 
+          "data-confirm"=>"Are you sure?"
+        %>
+        <h4 class="media-heading"><%= page.title%></h4>
+        <%= truncate page.description, length: 100%>
+      </div>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
