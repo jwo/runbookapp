@@ -1,7 +1,7 @@
-<% application.pages.group_by(&:folder).each do |folder, pages| %>
+<% application.pages.group_by{|p| p.folder.downcase}.each do |folder, pages| %>
   <h3 class="folder"><%= folder %></h3>
   <ul class="media-list">
-    <%pages.each do |page|%>
+    <%pages.sort_by{|p| p.order.to_i}.each do |page|%>
       <li class="media">
       <%= link_to [application, page], class: "pull-left" do %>
         <%= image_tag page.image.url(:thumb), class: "media-thumb"%>
