@@ -1,13 +1,14 @@
+<div class="section_title">
+  <h1><%= @application.name %> Runbook</h1></div>
+</div>
 <div class="row">
-  <div class="span12">
-    <p class="alert alert-warning text-align">DRAFT</p>
-    <div class="well">
-      <h1><%= @application.name%> RunBook</h1>
-    </div>
-
+  <div class="span10 offset2 section_title">
     <p>Created on: <%= Time.now.strftime("%b %d, %Y") %></p>
+    <p>Applications: iSurgery and iVendor</p>
   </div>
 </div>
+<div class="page_break"></div>
+
 
 <div class="row">
   <div class="span10 offset2">
@@ -24,11 +25,6 @@
 
 
   <%pages.sort_by{|p| p.order.to_i}.each do |page|%>
-    <div class="row">
-      <div class="span12">
-        <p class="alert alert-warning text-align">DRAFT</p>
-      </div>
-    </div>
     <div class="row">
       <div class="span12">
         <%= content_tag(:h1, page.title, class: 'report-title')%>
