@@ -1,0 +1,26 @@
+<% @application.pages.group_by{|p| p.folder.downcase}.each do |folder, pages| %>
+  <%pages.sort_by{|p| p.order.to_i}.each do |page|%>
+    <div class="row">
+      <div class="span12">
+        <h1><%= page.title %></h1>
+      </div>
+    </div>
+    <div class="well">
+      <p>
+        <%= page.description %>
+      </p>
+    </div>
+    <div class="page">
+      <div class="main">
+        <%= image_tag page.image.url(:page), id: "page-image"%>
+        <br/>
+        <div class="footer">
+          <%= page.footer %>
+        </div>
+      </div>
+      <aside> 
+        <%= page.sidebar %>
+      </aside>
+    </div>
+  <% end %>
+<% end %>

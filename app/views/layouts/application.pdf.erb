@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Runbookapp</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" %>
+  <%= wicked_pdf_javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-controller="<%= params[:controller] %>" data-action="<%= params[:action] %>">
+
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+</html>

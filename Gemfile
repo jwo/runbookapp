@@ -17,6 +17,7 @@ gem 'mini_magick'
 gem 'slim-rails'
 gem 'rack-cache'
 gem 'best_in_place', github: "bernat/best_in_place"
+gem 'wicked_pdf', github: "jwo/wicked_pdf"
 
 group :assets do
   gem 'sass-rails',   '~> 4.0.0.beta1'
@@ -33,6 +34,7 @@ group :development do
   gem 'foreman'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'wkhtmltopdf-binary'
 end
 
 group :development, :test do
@@ -40,4 +42,8 @@ group :development, :test do
   gem 'minitest-spec-rails'
   gem 'pry'
   gem 'pry-nav'
+end
+
+group :production do
+  gem 'wkhtmltopdf-heroku'
 end

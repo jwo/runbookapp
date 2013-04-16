@@ -7,7 +7,7 @@
 
 
 <% if @applications.any? -%>
-  <table>
+  <table class="table">
     <tr>
       <th>Name</th>
       <th>th</th>
@@ -16,6 +16,7 @@
       <tr>
         <td><%=link_to app.name, app %></td>
         <td>
+          <%=link_to 'PDF', application_path(app, format: :pdf), class: 'btn' %>
           <%=link_to 'edit', [:edit, app], class: 'btn' %>
           <%=link_to 'destroy', app, class: 'btn', "data-confirm"=>'Are you positive?', method: :destroy %>
         </td>

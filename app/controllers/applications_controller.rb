@@ -1,6 +1,6 @@
 class ApplicationsController < ApplicationController
   before_filter :authenticate_user!
-  respond_to :html
+  respond_to :html, :pdf
 
   def index
     @applications = current_user.applications
@@ -18,6 +18,14 @@ class ApplicationsController < ApplicationController
 
   def show
     @application = current_user.applications.find(params[:id])
+
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render :pdf => "#{@application.name.parameterize}.pdf",
+          layout: 'application'
+      end
+    end
   end
 
   def edit
