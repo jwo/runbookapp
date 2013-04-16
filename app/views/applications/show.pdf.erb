@@ -1,8 +1,30 @@
+<div class="row">
+  <div class="span12">
+    <p class="alert alert-warning text-align">DRAFT</p>
+    <div class="well">
+      <h1>Project: i22</h1>
+    </div>
+    <h2>Table of Contents</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= render partial: 'applications/table_of_contents'%>
+  </div>
+</div>
+<div class="page_break"></div>
+
 <% @application.pages.group_by{|p| p.folder.downcase}.each do |folder, pages| %>
   <%pages.sort_by{|p| p.order.to_i}.each do |page|%>
     <div class="row">
       <div class="span12">
-        <h1><%= page.title %></h1>
+        <p class="alert alert-warning text-align">DRAFT</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span12">
+        <%= content_tag(:h1, page.title, class: 'report-title')%>
       </div>
     </div>
     <div class="well">
@@ -22,5 +44,6 @@
         <%= page.sidebar %>
       </aside>
     </div>
+    <div class="page_break"></div>
   <% end %>
 <% end %>
