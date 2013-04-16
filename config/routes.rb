@@ -1,13 +1,9 @@
 Runbookapp::Application.routes.draw do
-  devise_for :users, :controllers => {
-    registrations: "users/registrations", 
-    passwords: "users/passwords"
-  }
+  devise_for :users
 
   resources :applications do
     resources :pages
   end
 
   root to: "applications#index"
-  #root to: "page#home"
 end
