@@ -5,7 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.0.beta1'
 gem 'pg'
 gem 'turbolinks'
-gem 'puma'
+gem 'puma', '2.0.0.b7'
 gem 'simple_form', github: 'plataformatec/simple_form'
 gem 'devise', github: "plataformatec/devise", branch: 'rails4'
 gem "cancan"
