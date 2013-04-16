@@ -1,4 +1,4 @@
-<% application.pages.group_by{|p| p.folder.downcase}.each do |folder, pages| %>
+<% application.pages.group_by{|p| p.folder.downcase}.sort.each do |folder, pages| %>
   <h3 class="page_title"><%= folder%></h3>
   <ul class="unstyled">
     <%pages.sort_by{|p| p.order.to_i}.each do |page|%>

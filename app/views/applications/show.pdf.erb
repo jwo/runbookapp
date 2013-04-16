@@ -2,9 +2,10 @@
   <div class="span12">
     <p class="alert alert-warning text-align">DRAFT</p>
     <div class="well">
-      <h1>Project: i22</h1>
+      <h1><%= @application.name%> RunBook</h1>
     </div>
-    <h2>Table of Contents</h1>
+
+    <p>Created on: <%= Time.now.strftime("%b %d, %Y") %></p>
   </div>
 </div>
 
@@ -16,7 +17,12 @@
 </div>
 <div class="page_break"></div>
 
-<% @application.pages.group_by{|p| p.folder.downcase}.each do |folder, pages| %>
+<% @application.pages.group_by{|p| p.folder.downcase}.sort.each do |folder, pages| %>
+
+  <div class="section_title"><h1><%= folder %></h1></div>
+  <div class="page_break"></div>
+
+
   <%pages.sort_by{|p| p.order.to_i}.each do |page|%>
     <div class="row">
       <div class="span12">
