@@ -46,4 +46,5 @@ end
 
 group :production do
   gem 'wkhtmltopdf-heroku'
+  gem 'rails_log_stdout', github: 'heroku/rails_log_stdout'
 end

@@ -7,6 +7,12 @@ GIT
       rails (>= 3.1)
 
 GIT
+  remote: git://github.com/heroku/rails_log_stdout.git
+  revision: 01b5bcc572e3baed1618f4068920dd83bd491fb2
+  specs:
+    rails_log_stdout (0.0.1)
+
+GIT
   remote: git://github.com/jnicklas/carrierwave.git
   revision: 92155e42cdb6ee99cf764c3ca3650d4f66e9f82f
   specs:
@@ -252,6 +258,7 @@ DEPENDENCIES
   quiet_assets
   rack-cache
   rails (= 4.0.0.beta1)
+  rails_log_stdout!
   sass-rails (~> 4.0.0.beta1)
   simple_form!
   slim-rails
